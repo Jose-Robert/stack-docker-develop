@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  ###############################################################
+  ## MAIL-SERVER
+  ###############################################################
+  mail-server:
+    container_name: mail-server
+    image: mailhog/mailhog
+    ports:
+      - "25:1025"
+      - "8025:8025"
+    networks:
+      - trinoti
+
+networks:
+  trinoti:
+    name: global

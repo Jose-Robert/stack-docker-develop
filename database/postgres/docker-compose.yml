@@ -1,0 +1,20 @@
+version: '3' 
+services:
+  postgres:
+     container_name: postgresql9.6
+     image: postgres
+     restart: always
+     environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: admin
+     ports:
+        - 5432:5432
+  pgadmin:
+     container_name: pgadmin4.1
+     image: dpage/pgadmin4:4.21
+     restart: always
+     environment:
+        PGADMIN_DEFAULT_EMAIL: "usuario@admin.com.br"
+        PGADMIN_DEFAULT_PASSWORD: "admin"
+     ports:
+         - "4000:80"
